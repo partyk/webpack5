@@ -1,6 +1,9 @@
-/* config for develop mode */
+const path = require('path');
+const config = require('./webpack.config');
 const {merge} = require('webpack-merge');
+// loader
 const common = require('./webpack.common');
+
 
 module.exports = merge(common, {
     mode: 'development',
@@ -18,14 +21,15 @@ module.exports = merge(common, {
         errorDetails: true
     }, */
     devtool: 'source-map',
-    watch: true,
     watchOptions: {
         ignored: /node_modules/
     },
+    devServer: {
+        static: {
+            directory: path.resolve(config.path.dist),
+        },
+    },
+    watch: true,
     plugins: [
-        // plugins.friendlyErrors(),
-        // plugins.bundleAnalyzer(),
-        // plugins.dashboard()
-        // plugins.browserSync()
     ]
 });

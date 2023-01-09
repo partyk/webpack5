@@ -3,13 +3,13 @@ const pkg = require('./../../package.json');
 const rootDir = path.resolve(__dirname + './../../');
 
 const config = {
-    rootDir,
     pkg,
     dir: {
         src: 'src',
         dist: 'dist',
     },
     path: {
+        root: rootDir,
         src: path.resolve(rootDir, 'src'),
         dist: path.resolve(rootDir, 'dist'),
         temp: path.resolve(rootDir, 'temp/webpack'),

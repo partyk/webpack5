@@ -10,9 +10,9 @@ module.exports = merge({
         mode: 'development',
         // a complete list of "stats" setting is on https://webpack.js.org/configuration/stats/
         resolve: {
-            extensions: [/*'.vue', '.css', '.tsx', '.ts', '.js', '.json'*/],
+            // extensions: [/*'.vue', '.css', '.tsx', '.ts', '.js', '.json'*/],
             modules: [
-                path.resolve(__dirname, 'node_modules')
+                path.resolve(config.path.root, 'node_modules'),
             ]
         },
         output: {

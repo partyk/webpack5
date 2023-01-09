@@ -8,7 +8,7 @@
     "start": "webpack --config=./webpack/config/webpack.dev.js",
     "build": "webpack --env production --config=./webpack/config/webpack.prod.js",
     "dev": "webpack --config=./webpack/config/webpack.dev.js",
-    "dev:server": "webpack-dev-server --config=./webpack/config/webpack.dev.js"
+    "dev:server": "webpack-dev-server --config=./webpack/config/webpack.devServer.js"
   },
   "repository": {
     "type": "git",
