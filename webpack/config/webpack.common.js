@@ -4,6 +4,8 @@ const entry = require('./webpack.entry');
 const {merge} = require('webpack-merge');
 // loader
 const loaders = require('./../loaders/index');
+// plugins
+const plugins = require('./../plugins/index');
 
 module.exports = merge({
         entry,
@@ -16,8 +18,14 @@ module.exports = merge({
             ]
         },
         output: {
-            path: path.resolve(config.path.assets)
+            path: path.resolve(config.path.assets),
         },
+        plugins: [
+            plugins.clean(),
+            plugins.copy(),
+            plugins.imageMin(),
+            plugins.webpackBar(),
+        ],
     },
     loaders.javaScript(),
 );

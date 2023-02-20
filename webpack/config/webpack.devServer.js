@@ -29,7 +29,7 @@ module.exports = merge(common, {
             directory: path.resolve(config.path.dist),
         },
     },
-    watch: true,
+    // watch: true,
     plugins: [
     ]
 });
