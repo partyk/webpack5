@@ -6,4 +6,6 @@ console.log(path.resolve(config.path.src, 'js/src/index.js'));
 module.exports = {
     // src/js javascript files
     'main': path.resolve(config.path.src, 'js/src/index.js'),
+    // css style
+    'style': path.resolve(config.path.src, 'css/src/style.css'),
 };

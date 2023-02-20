@@ -24,10 +24,12 @@ module.exports = merge(
         plugins: [
             plugins.clean(),
             plugins.copy(),
+            // plugins.miniCssExtract(),
             plugins.imageMin(),
             plugins.webpackBar(),
             plugins.ESLint(),
         ],
     },
     loaders.javaScript(),
+    loaders.styleCSS(),
 );

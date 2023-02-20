@@ -1,3 +1,4 @@
+const isProduction = require('./../libs/isProduction');
 const {merge} = require('webpack-merge');
 const configProd = require('./webpack.config.prod');
 let configLocal = {};
@@ -9,4 +10,7 @@ try {
     console.info('Using global configuration only. For local configuration create webpack.config.local from webpack.config.example.js.');
 }
 
-module.exports = merge(configProd, configLocal);
+module.exports = merge({
+    isProduction: isProduction,
+    isDevelop: !isProduction,
+}, configProd, configLocal);
