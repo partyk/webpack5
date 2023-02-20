@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "eslint-config-standart-partyk"
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-env"]
+    },
+    "sourceType": "module"
+  }
+}

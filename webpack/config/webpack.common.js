@@ -7,7 +7,8 @@ const loaders = require('./../loaders/index');
 // plugins
 const plugins = require('./../plugins/index');
 
-module.exports = merge({
+module.exports = merge(
+    {
         entry,
         mode: 'development',
         // a complete list of "stats" setting is on https://webpack.js.org/configuration/stats/
@@ -25,6 +26,7 @@ module.exports = merge({
             plugins.copy(),
             plugins.imageMin(),
             plugins.webpackBar(),
+            plugins.ESLint(),
         ],
     },
     loaders.javaScript(),
