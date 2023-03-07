@@ -6,7 +6,7 @@ const config = {
     pkg,
     dir: {
         src: 'src',
-        dist: 'dist',
+        dist: 'dist'
     },
     path: {
         root: rootDir,
@@ -16,7 +16,7 @@ const config = {
         assets: path.resolve(rootDir, 'dist/assets'),
         node_modules: path.resolve(rootDir, 'node_modules'),
         publicPath: '/',
-        publicPathAssets: '/assets/',
+        publicPathAssets: 'http://localhost:8080/assets/'
     }
 };
 

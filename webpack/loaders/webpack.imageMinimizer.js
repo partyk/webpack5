@@ -1,13 +1,22 @@
+/**
+ * @DOC https://www.npmjs.com/package/image-minimizer-webpack-plugin
+ */
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = ({include, exclude} = {}) => ({
+    output: {
+        assetModuleFilename: 'images/[hash][ext][query]'
+    },
     module: {
         rules: [
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 include,
                 exclude,
-                type: 'asset'
+                type: 'asset',
+                generator: {
+                    filename: 'static/[name][contenthash][ext][query]'
+                }
             }
         ]
     },

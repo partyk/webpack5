@@ -19,7 +19,8 @@ module.exports = merge(
             ]
         },
         output: {
-            path: path.resolve(config.path.assets)
+            path: path.resolve(config.path.assets),
+            publicPath: path.resolve(config.path.publicPathAssets)
         },
         plugins: [
             plugins.clean(),
