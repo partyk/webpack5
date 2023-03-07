@@ -1,7 +1,7 @@
 const config = require('./../config/webpack.config');
 
 /* plugins */
-const plugins = require('./../plugins/index');
+// const plugins = require('./../plugins/index');
 
 module.exports = () => ({
     loader: 'postcss-loader',

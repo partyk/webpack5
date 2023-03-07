@@ -1,1 +1,1 @@
-console.log('aaa');
+import './modules/style/style.css';

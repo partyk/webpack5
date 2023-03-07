@@ -7,8 +7,8 @@ module.exports = (options = {}) => {
     options = merge({
             patterns: [{
                 from: config.dir.src + '/images',
-                to: 'images'
-            }]
+                to: 'images',
+            }],
         },
         options);
     return new CopyPlugin(options);

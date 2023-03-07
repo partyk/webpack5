@@ -24,7 +24,7 @@ module.exports = merge(
         plugins: [
             plugins.clean(),
             plugins.copy(),
-            // plugins.miniCssExtract(),
+            plugins.miniCssExtract(),
             plugins.imageMin(),
             plugins.webpackBar(),
             plugins.ESLint(),
@@ -32,4 +32,5 @@ module.exports = merge(
     },
     loaders.javaScript(),
     loaders.styleCSS(),
+    // loaders.imageMin(),
 );
