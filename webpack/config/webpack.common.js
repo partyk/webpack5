@@ -15,22 +15,23 @@ module.exports = merge(
         resolve: {
             // extensions: [/*'.vue', '.css', '.tsx', '.ts', '.js', '.json'*/],
             modules: [
-                path.resolve(config.path.root, 'node_modules'),
+                path.resolve(config.path.root, 'node_modules')
             ]
         },
         output: {
-            path: path.resolve(config.path.assets),
+            path: path.resolve(config.path.assets)
         },
         plugins: [
             plugins.clean(),
             plugins.copy(),
             plugins.miniCssExtract(),
-            plugins.imageMin(),
+            // plugins.imageMin(),
             plugins.webpackBar(),
-            plugins.ESLint(),
-        ],
+            plugins.ESLint()
+        ]
     },
     loaders.javaScript(),
     loaders.styleCSS(),
+    loaders.imageMinimizer()
     // loaders.imageMin(),
 );
