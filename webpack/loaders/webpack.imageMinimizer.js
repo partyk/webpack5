@@ -3,19 +3,22 @@
  */
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
+const config = require('./../config/webpack.config');
+
 module.exports = ({include, exclude} = {}) => ({
     output: {
-        assetModuleFilename: 'images/[name]-[fullhash][ext][query]'
+        assetModuleFilename: 'static/[name]-[contenthash][ext][query]'
     },
     module: {
         rules: [
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
+                // TODO dořešit SVG
+                test: /\.(jpe?g|png|gif)$/i,
                 include,
                 exclude,
                 type: 'asset',
                 generator: {
-                    filename: 'static/[name]-[contenthash][ext][query]'
+                    filename: 'static/[id]/[name]-[contenthash][ext][query]'
                 }
             }
         ]
@@ -27,7 +30,12 @@ module.exports = ({include, exclude} = {}) => ({
                     implementation: ImageMinimizerPlugin.imageminMinify,
                     options: {
                         // Only apply this one to files equal to or over 8192 bytes
-                        filter: false,
+                        filter: (source) => {
+                            if (source.byteLength >= 8192 && config.isProduction) {
+                                return true;
+                            }
+                            return false;
+                        },
                         // Lossless optimization with custom option
                         // Feel free to experiment with options for better result for you
                         plugins: [
