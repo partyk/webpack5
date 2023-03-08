@@ -5,7 +5,7 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = ({include, exclude} = {}) => ({
     output: {
-        assetModuleFilename: 'images/[hash][ext][query]'
+        assetModuleFilename: 'images/[name]-[fullhash][ext][query]'
     },
     module: {
         rules: [
@@ -15,7 +15,7 @@ module.exports = ({include, exclude} = {}) => ({
                 exclude,
                 type: 'asset',
                 generator: {
-                    filename: 'static/[name][contenthash][ext][query]'
+                    filename: 'static/[name]-[contenthash][ext][query]'
                 }
             }
         ]
@@ -26,6 +26,8 @@ module.exports = ({include, exclude} = {}) => ({
                 minimizer: {
                     implementation: ImageMinimizerPlugin.imageminMinify,
                     options: {
+                        // Only apply this one to files equal to or over 8192 bytes
+                        filter: false,
                         // Lossless optimization with custom option
                         // Feel free to experiment with options for better result for you
                         plugins: [

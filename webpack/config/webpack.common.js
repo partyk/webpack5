@@ -33,6 +33,8 @@ module.exports = merge(
     },
     loaders.javaScript(),
     loaders.styleCSS(),
+    loaders.styleLess(),
+    loaders.styleScss(),
     loaders.imageMinimizer()
     // loaders.imageMin(),
 );

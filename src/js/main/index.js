@@ -1,1 +1,3 @@
-import './modules/style/style.css';
+import('./modules/testCSS');
+import('./modules/testLess');
+import('./modules/testScss');
