@@ -1,7 +1,7 @@
 const config = require('./../config/webpack.config');
 
 /* plugins */
-// const plugins = require('./../plugins/index');
+const plugins = require('./../plugins/index');
 
 module.exports = () => ({
     loader: 'postcss-loader',
@@ -9,11 +9,13 @@ module.exports = () => ({
         sourceMap: config.isDevelop,
         postcssOptions: {
             plugins: [
-                /* plugins.postCSSDiscardDuplicates(),
+                // TODO nefunguje clean duplicitniho kodu
+                // plugins.discardDuplicates(),
                 plugins.pixrem(),
-                plugins.prefixer(),
-                ...(config.isProduction ? [plugins.cssnano()] : []) */
-            ],
-        },
-    },
+                'autoprefixer',
+                'postcss-preset-env'
+                // ...(config.isProduction ? [plugins.cssnano()] : [])
+            ]
+        }
+    }
 });
