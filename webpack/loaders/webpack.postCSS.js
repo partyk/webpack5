@@ -14,7 +14,7 @@ module.exports = () => ({
                 plugins.pixrem(),
                 'autoprefixer',
                 'postcss-preset-env'
-                // ...(config.isProduction ? [plugins.cssnano()] : [])
+                ...(config.isProduction ? [plugins.cssnano()] : [])
             ]
         }
     }
