@@ -13,7 +13,7 @@ module.exports = () => ({
                 // plugins.discardDuplicates(),
                 plugins.pixrem(),
                 'autoprefixer',
-                'postcss-preset-env'
+                'postcss-preset-env',
                 ...(config.isProduction ? [plugins.cssnano()] : [])
             ]
         }
