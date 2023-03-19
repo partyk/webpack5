@@ -31,6 +31,7 @@ module.exports = merge(
             plugins.ESLint()
         ]
     },
+    loaders.vue(),
     loaders.javaScript(),
     loaders.styleCSS(),
     loaders.styleLess(),
