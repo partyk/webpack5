@@ -1,7 +1,6 @@
 <template>
     <div
             id="aaa"
-            v-bind:key=""
     >
         <p>{{ message }}</p>
     </div>
