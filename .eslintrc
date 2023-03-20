@@ -1,12 +1,12 @@
 {
   "extends": [
     "eslint-config-standart-partyk",
-    "plugin:vue/essential"
+    "plugin:vue/vue3-essential"
   ],
   "plugins": [
     "vue"
   ],
-  "parser": "@babel/eslint-parser",
+  "parser": "vue-eslint-parser",
   "parserOptions": {
     "requireConfigFile": false,
     "parser": "@babel/eslint-parser",

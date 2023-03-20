@@ -1,4 +1,9 @@
 <template>
-    <p>{{ message }}</p>
+    <div
+            id="aaa"
+            v-bind:key=""
+    >
+        <p>{{ message }}</p>
+    </div>
 </template>
 <script src="./components.js"></script>

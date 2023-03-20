@@ -15,12 +15,12 @@ module.exports = merge(
         resolve: {
             // extensions: [/*'.vue', '.css', '.tsx', '.ts', '.js', '.json'*/],
             modules: [
-                path.resolve(config.path.root, 'node_modules')
-            ]
+                path.resolve(config.path.root, 'node_modules'),
+            ],
         },
         output: {
             path: path.resolve(config.path.assets),
-            publicPath: path.resolve(config.path.publicPathAssets)
+            publicPath: path.resolve(config.path.publicPathAssets),
         },
         plugins: [
             plugins.clean(),
@@ -28,14 +28,19 @@ module.exports = merge(
             plugins.miniCssExtract(),
             // plugins.imageMin(),
             plugins.webpackBar(),
-            plugins.ESLint()
-        ]
+            plugins.ESLint({
+                extensions: [
+                    '.js',
+                    '.vue',
+                ],
+            }),
+        ],
     },
     loaders.vue(),
     loaders.javaScript(),
     loaders.styleCSS(),
     loaders.styleLess(),
     loaders.styleScss(),
-    loaders.imageMinimizer()
+    loaders.imageMinimizer(),
     // loaders.imageMin(),
 );
