@@ -1,20 +1,16 @@
 {
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
   "extends": [
-    "eslint-config-standart-partyk",
-    "plugin:vue/vue3-essential"
+    "eslint-config-standart-partyk"
   ],
-  "plugins": [
-    "vue"
-  ],
-  "parser": "vue-eslint-parser",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "requireConfigFile": false,
-    "ecmaVersion": 12,
-    "parser": "@babel/eslint-parser",
-    "babelOptions": {
-      "presets": ["@babel/preset-env"]
-    },
-    "sourceType": "module"
+    "ecmaVersion": 12
   },
   "rules": {
     "comma-dangle": [
@@ -52,11 +48,5 @@
       }
     ],
     "no-unneeded-ternary": 2,
-    "vue/script-indent": ["warn", 4, {
-      "baseIndent": 0
-    }],
-    "vue/html-indent": ["warn", 4, {
-      "attribute": 2
-    }]
   }
 }
