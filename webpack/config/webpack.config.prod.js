@@ -1,12 +1,13 @@
-const path = require('path');
+const path = require('node:path');
 const pkg = require('./../../package.json');
+// eslint-disable-next-line no-path-concat
 const rootDir = path.resolve(__dirname + './../../');
 
 const config = {
     pkg,
     dir: {
         src: 'src',
-        dist: 'dist'
+        dist: 'dist',
     },
     path: {
         root: rootDir,
@@ -16,8 +17,8 @@ const config = {
         assets: path.resolve(rootDir, 'dist/assets'),
         node_modules: path.resolve(rootDir, 'node_modules'),
         publicPath: '/',
-        publicPathAssets: 'http://localhost:8080/assets/'
-    }
+        publicPathAssets: '/assets/',
+    },
 };
 
 module.exports = config;

@@ -21,7 +21,7 @@ module.exports = ({
                 exclude,
                 type: 'asset',
                 generator: {
-                    filename: 'static/[id]/[name]-[contenthash][ext][query]',
+                    filename: 'static/[name]-[contenthash][ext][query]',
                 },
             },
         ],

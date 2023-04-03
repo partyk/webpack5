@@ -53,10 +53,11 @@ module.exports = ({
         optimization: {
             minimize: true,
             minimizer: [
+                new TerserPlugin(),
                 new TerserPlugin({
                     include,
                     exclude,
-                    test: test || /\.js(\?.*)?$/i,
+                    test,
                     terserOptions: options,
                 }),
             ],
