@@ -1,7 +1,5 @@
 <template>
-    <div
-            id="aaa"
-    >
+    <div>
         <p>{{ message }}</p>
     </div>
 </template>

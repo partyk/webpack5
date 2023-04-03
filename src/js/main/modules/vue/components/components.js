@@ -1,5 +1,5 @@
 export default {
-    name: 'Hello World',
+    name: 'HelloWorld',
     data() {
         return {
             message: 'Hello World',

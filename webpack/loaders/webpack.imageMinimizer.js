@@ -5,9 +5,12 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const config = require('./../config/webpack.config');
 
-module.exports = ({include, exclude} = {}) => ({
+module.exports = ({
+    include,
+    exclude,
+} = {}) => ({
     output: {
-        assetModuleFilename: 'static/[name]-[contenthash][ext][query]'
+        assetModuleFilename: 'static/[name]-[contenthash][ext][query]',
     },
     module: {
         rules: [
@@ -18,10 +21,10 @@ module.exports = ({include, exclude} = {}) => ({
                 exclude,
                 type: 'asset',
                 generator: {
-                    filename: 'static/[id]/[name]-[contenthash][ext][query]'
-                }
-            }
-        ]
+                    filename: 'static/[id]/[name]-[contenthash][ext][query]',
+                },
+            },
+        ],
     },
     optimization: {
         minimizer: [
@@ -55,20 +58,20 @@ module.exports = ({include, exclude} = {}) => ({
                                                     addAttributesToSVGElement: {
                                                         params: {
                                                             attributes: [
-                                                                {xmlns: 'http://www.w3.org/2000/svg'}
-                                                            ]
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        ]
-                    }
-                }
-            })
-        ]
-    }
+                                                                {xmlns: 'http://www.w3.org/2000/svg'},
+                                                            ],
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    ],
+                                },
+                            ],
+                        ],
+                    },
+                },
+            }),
+        ],
+    },
 });
