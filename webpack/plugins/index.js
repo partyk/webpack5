@@ -1,6 +1,7 @@
 exports.clean = require('./webpack.clean');
 exports.copy = require('./webpack.copy');
 exports.cssnano = require('./webpack.cssnano');
+exports.define = require('./webpack.define');
 exports.discardDuplicates = require('./webpack.discardDuplicates');
 exports.ESLint = require('./webpack.ESLint');
 exports.miniCssExtract = require('./webpack.miniCssExtract');
