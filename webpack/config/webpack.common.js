@@ -13,7 +13,7 @@ module.exports = merge(
         mode: 'development',
         // a complete list of "stats" setting is on https://webpack.js.org/configuration/stats/
         resolve: {
-            // extensions: [/*'.vue', '.css', '.tsx', '.ts', '.js', '.json'*/],
+            extensions: ['.vue', '.js'/*, '.css', '.tsx', '.ts','.json' */],
             modules: [
                 path.resolve(config.path.root, 'node_modules'),
             ],

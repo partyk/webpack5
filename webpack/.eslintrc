@@ -12,6 +12,9 @@
     "requireConfigFile": false,
     "ecmaVersion": 12
   },
+  "globals": {
+    "System": true
+  },
   "rules": {
     "comma-dangle": [
       "warn",

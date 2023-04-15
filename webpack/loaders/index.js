@@ -1,4 +1,4 @@
-exports.vue = require('./webapck.vue');
+exports.vue = require('./webpack.vue');
 exports.styleCSS = require('./webpack.css');
 exports.javaScript = require('./webpack.javascript');
 exports.imageMinimizer = require('./webpack.imageMinimizer');
