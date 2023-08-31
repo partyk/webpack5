@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config=./webpack/config/webpack.dev.js",
     "build": "webpack --env production --config=./webpack/config/webpack.prod.js",
+    "download": "node webpack/script/download.js",
     "dev": "webpack --config=./webpack/config/webpack.dev.js",
     "dev:server": "webpack-dev-server --config=./webpack/config/webpack.devServer.js"
   },
@@ -31,6 +32,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
     "cssnano": "^5.1.15",
+    "download": "^8.0.0",
     "eslint": "^8.34.0",
     "eslint-config-standart-partyk": "^2.0.0-beta.1",
     "eslint-plugin-vue": "^9.9.0",
