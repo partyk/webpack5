@@ -2,9 +2,6 @@
  * @DOC https://webpack.js.org/loaders/val-loader/#modernizr
  * @DOC https://www.npmjs.com/package/val-loader
  */
-const config = require('./../config/webpack.config');
-/* modules */
-
 
 module.exports = ({
     include,

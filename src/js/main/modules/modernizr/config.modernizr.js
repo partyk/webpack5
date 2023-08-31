@@ -1,3 +1,7 @@
+/**
+ * @DOC https://webpack.js.org/loaders/val-loader/#modernizr
+ * @DOC https://www.npmjs.com/package/val-loader
+ */
 const modernizr = require('modernizr');
 
 module.exports = function (options) {
