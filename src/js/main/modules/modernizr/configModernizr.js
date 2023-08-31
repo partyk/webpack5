@@ -4,6 +4,11 @@
  */
 const modernizr = require('modernizr');
 
+/**
+ * @param options {{}}
+ * @DOC https://github.com/Modernizr/Modernizr/blob/HEAD/lib/config-all.json
+ * @returns {Promise<unknown>}
+ */
 module.exports = function (options) {
     return new Promise(function (resolve) {
         // It is impossible to throw an error because modernizr causes the process.exit(1)

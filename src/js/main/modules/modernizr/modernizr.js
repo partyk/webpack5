@@ -1,3 +1,3 @@
-import Modernizer from './config.modernizr';
+import Modernizer from './configModernizr';
 
 console.log('Modernizer', Modernizer);

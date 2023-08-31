@@ -10,7 +10,7 @@ module.exports = ({
     module: {
         rules: [
             {
-                test: /\.modernizr.js$/,
+                test: /configModernizr.js$/,
                 include,
                 exclude,
                 use: [
