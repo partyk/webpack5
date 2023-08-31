@@ -37,7 +37,7 @@ module.exports = merge(
             }),
         ],
     },
-    loaders.modernizer(),
+    loaders.modernizr(),
     loaders.vue(),
     loaders.javaScript(),
     loaders.styleCSS(),

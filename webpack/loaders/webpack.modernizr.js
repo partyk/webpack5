@@ -16,13 +16,17 @@ module.exports = ({
                 use: [
                     {
                         loader: 'val-loader',
+                        /**
+                         * @DOC https://github.com/Modernizr/Modernizr/blob/HEAD/lib/config-all.json
+                         */
                         options: {
-                            'minify': false,
-                            'options': ['setClasses'],
+                            'minify': true,
+                            'options': [
+                                'setClasses',
+                            ],
                             'feature-detects': [
-                                'test/css/flexbox',
-                                'test/es6/promises',
-                                'test/serviceworker',
+                                'css/flexwrap',
+                                'forcetouch',
                             ],
                         },
                     },
