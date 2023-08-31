@@ -17,6 +17,13 @@ module.exports = merge(
             modules: [
                 path.resolve(config.path.root, 'node_modules'),
             ],
+            alias: {
+                '@src': path.resolve(config.path.root, 'src'),
+                '@js': path.resolve(config.path.root, 'src', 'js'),
+                '@scss': path.resolve(config.path.root, 'src', 'scss'),
+                '@images': path.resolve(config.path.root, 'src', 'images'),
+                '@node_modules': path.resolve(config.path.root, 'node_modules'),
+            },
         },
         output: {
             path: path.resolve(config.path.assets),
