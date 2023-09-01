@@ -32,6 +32,18 @@ module.exports = merge(
         },
         plugins: [
             plugins.clean(),
+            plugins.concat({
+                allowOptimization: true,
+                allowWatch: true,
+                bundles: [{
+                    src: [
+                        path.resolve(config.path.root, 'src', 'js', 'concat', 'test1.js'),
+                        path.resolve(config.path.root, 'src', 'js', 'concat', 'test2.js'),
+                        path.resolve(config.path.root, 'src', 'js', 'concat', 'test3.js'),
+                    ],
+                    dest: path.resolve(config.path.assets, 'js', 'concat.js'),
+                }],
+            }),
             plugins.copy(),
             plugins.miniCssExtract(),
             // plugins.imageMin(),
