@@ -6,6 +6,9 @@ const {merge} = require('webpack-merge');
 const loaders = require('./../loaders/index');
 // plugins
 const plugins = require('./../plugins/index');
+// libs
+const babel = require('@babel/core');
+const terser = require('terser');
 
 module.exports = merge(
     {
@@ -42,6 +45,18 @@ module.exports = merge(
                         path.resolve(config.path.root, 'src', 'js', 'concat', 'test3.js'),
                     ],
                     dest: path.resolve(config.path.assets, 'js', 'concat.js'),
+                    transforms: {
+                        after: async (code) => {
+                            const babelCode = await babel.transform(code, {
+                                presets: ['@babel/preset-env'],
+                            });
+                            if (config.isDevelop) {
+                                return babelCode.code;
+                            }
+                            const minifiedCode = await terser.minify(babelCode.code);
+                            return minifiedCode.code;
+                        },
+                    },
                 }],
             }),
             plugins.copy(),
