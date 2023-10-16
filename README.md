@@ -1,6 +1,8 @@
 # webpack5
 Webpack 5 devstack
 
+Node.js: *v16.20.1*
+
 ## Instalation from Git
 
 1.  Download or clone repository
