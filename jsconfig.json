@@ -8,10 +8,11 @@
     "removeComments": true,
     "sourceMap": true,
     "paths": {
-      "@src/*": ["./src/*"],
-      "@js/*": ["./src/js/*"],
-      "@scss/*": ["./src/scss/*"],
-      "@images/*": ["./src/images/*"]
+      "@ui/*": ["./app/ui/*"],
+      "@js/*": ["./app/ui/js/*"],
+      "@less/*": ["./app/ui/less/*"],
+      "@scss/*": ["./app/ui/scss/*"],
+      "@images/*": ["./app/ui/images/*"]
     }
   }
 }

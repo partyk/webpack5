@@ -6,8 +6,7 @@
         "targets": {
           "browsers": [
             "> 1% in CZ",
-            "Explorer >= 10",
-            "iOs >= 9",
+            "iOs >= 10",
             "last 3 versions"
           ]
         }
