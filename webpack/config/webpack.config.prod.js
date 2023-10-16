@@ -7,14 +7,14 @@ const config = {
     pkg,
     dir: {
         src: 'app/ui',
-        dist: 'dist',
+        dist: 'www',
     },
     path: {
         root: rootDir,
         src: path.resolve(rootDir, 'app/ui'),
-        dist: path.resolve(rootDir, 'dist'),
+        dist: path.resolve(rootDir, 'www'),
         temp: path.resolve(rootDir, 'temp/webpack'),
-        assets: path.resolve(rootDir, 'dist/assets'),
+        assets: path.resolve(rootDir, 'www/assets'),
         node_modules: path.resolve(rootDir, 'node_modules'),
         publicPath: '/',
         publicPathAssets: '/assets/',
