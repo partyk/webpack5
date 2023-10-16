@@ -18,10 +18,10 @@ module.exports = merge(
                 path.resolve(config.path.root, 'node_modules'),
             ],
             alias: {
-                '@src': path.resolve(config.path.root, 'src'),
-                '@js': path.resolve(config.path.root, 'src', 'js'),
-                '@scss': path.resolve(config.path.root, 'src', 'scss'),
-                '@images': path.resolve(config.path.root, 'src', 'images'),
+                '@ui': path.resolve(config.path.root, 'app', 'ui'),
+                '@js': path.resolve(config.path.root, 'app', 'ui', 'js'),
+                '@scss': path.resolve(config.path.root, 'app', 'ui', 'scss'),
+                '@images': path.resolve(config.path.root, 'app', 'ui', 'images'),
                 '@node_modules': path.resolve(config.path.root, 'node_modules'),
             },
         },
@@ -32,19 +32,19 @@ module.exports = merge(
         },
         plugins: [
             plugins.clean(),
-            plugins.concat({
+            /* plugins.concat({
                 allowOptimization: true,
                 allowWatch: true,
                 bundles: [{
                     src: [
-                        path.resolve(config.path.root, 'src', 'js', 'concat', 'test1.js'),
-                        path.resolve(config.path.root, 'src', 'js', 'concat', 'test2.js'),
-                        path.resolve(config.path.root, 'src', 'js', 'concat', 'test3.js'),
+                        path.resolve(config.path.root, 'app', 'ui', 'js', 'concat', 'test1.js'),
+                        path.resolve(config.path.root, 'app', 'ui', 'js', 'concat', 'test2.js'),
+                        path.resolve(config.path.root, 'app', 'ui', 'js', 'concat', 'test3.js'),
                     ],
                     dest: path.resolve(config.path.assets, 'js', 'concat.js'),
                 }],
-            }),
-            plugins.copy(),
+            }), */
+            // plugins.copy(),
             plugins.miniCssExtract(),
             // plugins.imageMin(),
             plugins.webpackBar(),
@@ -56,11 +56,11 @@ module.exports = merge(
             }),
         ],
     },
-    loaders.vue(),
+    // loaders.vue(),
     loaders.javaScript(),
-    loaders.styleCSS(),
+    // loaders.styleCSS(),
     loaders.styleLess(),
-    loaders.styleScss(),
+    // loaders.styleScss(),
     loaders.imageMinimizer(),
     // loaders.imageMin(),
 );

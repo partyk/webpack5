@@ -7,5 +7,5 @@ Promise.all([
     import(/* webpackChunkName: "core-js" */ 'core-js/stable'),
     import(/* webpackChunkName: "runtime" */ 'regenerator-runtime/runtime'),
     // mine file
-    import(/* webpackChunkName: "main-index" */ '../main/index'),
+    // import(/* webpackChunkName: "main-index" */ '../main/index'),
 ]).then();

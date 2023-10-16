@@ -22,7 +22,7 @@ module.exports = merge(common, {
     }, */
     devtool: 'source-map',
     watchOptions: {
-        ignored: /node_modules/
+        ignored: /node_modules/,
     },
     devServer: {
         static: {
@@ -31,5 +31,5 @@ module.exports = merge(common, {
     },
     // watch: true,
     plugins: [
-    ]
+    ],
 });
