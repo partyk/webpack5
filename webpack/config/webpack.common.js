@@ -43,7 +43,7 @@ module.exports = merge(
                 ],
             }),
             plugins.htmlWebpack({
-                ver: Math.floor(Math.random() * (100000 - 0 + 1) + 0),
+                ver: Math.floor(Math.random() * (100000 - 1) + 1),
                 filename: path.resolve(config.path.dist, 'index.html'),
                 template: path.resolve(config.path.src, 'template/index.html'),
                 inject: false,
