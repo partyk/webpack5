@@ -42,6 +42,13 @@ module.exports = merge(
                     '.vue',
                 ],
             }),
+            plugins.htmlWebpack({
+                ver: Math.floor(Math.random() * (100000 - 0 + 1) + 0),
+                filename: path.resolve(config.path.dist, 'index.html'),
+                template: path.resolve(config.path.src, 'template/index.html'),
+                inject: false,
+                hash: true,
+            }),
         ],
     },
     loaders.vue(),
