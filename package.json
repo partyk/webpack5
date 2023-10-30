@@ -5,12 +5,16 @@
   "description": "DevSteck webpack 5",
   "main": "index.js",
   "scripts": {
+    "cleanUp": "node webpack/script/cleanUp.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config=./webpack/config/webpack.dev.js",
     "build": "webpack --env production --config=./webpack/config/webpack.prod.js",
     "download": "node webpack/script/download.js",
     "dev": "webpack --config=./webpack/config/webpack.dev.js",
-    "dev:server": "webpack-dev-server --config=./webpack/config/webpack.devServer.js"
+    "dev:server": "webpack-dev-server --config=./webpack/config/webpack.devServer.js",
+    "prebuild": "npm run cleanUp",
+    "predev": "npm run cleanUp",
+    "predev:server": "npm run cleanUp"
   },
   "repository": {
     "type": "git",
