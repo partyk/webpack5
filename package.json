@@ -14,7 +14,9 @@
     "dev:server": "webpack-dev-server --config=./webpack/config/webpack.devServer.js",
     "prebuild": "npm run cleanUp",
     "predev": "npm run cleanUp",
-    "predev:server": "npm run cleanUp"
+    "predev:server": "npm run cleanUp",
+    "//": "@DOC: https://www.npmjs.com/package/svg-symbol-sprite",
+    "svg-sprite": "svg-symbol-sprite -i ./src/icons -o ./temp/webpack/icons/icons.svg -c ./webpack/config/svgo.config.js"
   },
   "repository": {
     "type": "git",
