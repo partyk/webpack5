@@ -43,7 +43,7 @@ module.exports = merge(
                 ],
             }),
             plugins.htmlWebpack({
-                ver: Math.floor(Math.random() * (100000 - 0 + 1) + 0),
+                ver: Math.floor(Math.random() * (100000 - 1) + 1),
                 filename: path.resolve(config.path.dist, 'index.html'),
                 template: path.resolve(config.path.src, 'template/index.html'),
                 inject: false,
@@ -53,9 +53,45 @@ module.exports = merge(
     },
     loaders.vue(),
     loaders.javaScript(),
-    loaders.styleCSS(),
-    loaders.styleLess(),
-    loaders.styleScss(),
+    loaders.styleCSS({
+        exclude: [
+            path.resolve(config.path.src, 'css'),
+        ],
+    }),
+    loaders.styleCSS({
+        include: [
+            path.resolve(config.path.src, 'css'),
+        ],
+        finalLoader: {
+            type: 'miniCssExtrac',
+        },
+    }),
+    loaders.styleLess({
+        exclude: [
+            path.resolve(config.path.src, 'less'),
+        ],
+    }),
+    loaders.styleLess({
+        include: [
+            path.resolve(config.path.src, 'less'),
+        ],
+        finalLoader: {
+            type: 'miniCssExtrac',
+        },
+    }),
+    loaders.styleScss({
+        exclude: [
+            path.resolve(config.path.src, 'scss'),
+        ],
+    }),
+    loaders.styleScss({
+        include: [
+            path.resolve(config.path.src, 'scss'),
+        ],
+        finalLoader: {
+            type: 'miniCssExtrac',
+        },
+    }),
     loaders.imageMinimizer(),
     // loaders.imageMin(),
 );

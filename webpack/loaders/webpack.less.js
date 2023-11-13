@@ -1,6 +1,7 @@
 /**
  * @DOC https://www.npmjs.com/package/css-loader
  * @DOC https://www.npmjs.com/package/less-loader
+ * @DOC https://www.npmjs.com/package/style-loader
  */
 const config = require('./../config/webpack.config');
 /* modules */
@@ -10,11 +11,16 @@ const loader = require('./index');
 
 // plugins
 const plugins = require('./../plugins/index');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// libs
+const getFinalStyleLoader = require('./../libs/getFinalStyleLoader');
 
-module.exports = ({include, exclude} = {}) => ({
+module.exports = ({
+    include,
+    exclude,
+    finalLoader,
+} = {}) => ({
     plugins: [
-        plugins.miniCssExtract()
+        plugins.miniCssExtract(),
     ],
     module: {
         rules: [
@@ -23,23 +29,16 @@ module.exports = ({include, exclude} = {}) => ({
                 include,
                 exclude,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: config.path.publicPathAssets
-                            // TODO mrknout na hot reaload. Asi už nebude potřeba
-                            // only enable hot in development
-                            // hmr: config.isDevelop,
-                            // if hmr does not work, this is a forceful method.
-                            // reloadAll: config.isProduction
-                        }
-                    },
+                    getFinalStyleLoader({
+                        ...finalLoader,
+                        config,
+                    }),
                     {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 4,
-                            sourceMap: config.isDevelop
-                        }
+                            sourceMap: config.isDevelop,
+                        },
                     },
                     loader.postCSS(),
                     {
@@ -48,14 +47,14 @@ module.exports = ({include, exclude} = {}) => ({
                             lessOptions: {
                                 paths: [
                                     config.path.node_modules,
-                                    config.path.src
-                                ]
+                                    config.path.src,
+                                ],
                             },
-                            sourceMap: config.isDevelop
-                        }
-                    }
-                ]
-            }
-        ]
-    }
+                            sourceMap: config.isDevelop,
+                        },
+                    },
+                ],
+            },
+        ],
+    },
 });
