@@ -5,8 +5,10 @@
   "description": "DevSteck webpack 5",
   "main": "index.js",
   "scripts": {
-    "beforeBuild": "npm run tempDirectory && npm run generateIconFont",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "beforeBuild": "npm run cleanUp && npm run generateIconFont",
     "build": "webpack --env production --config=./webpack/config/webpack.prod.js",
+    "cleanUp": "node webpack/script/cleanUp.js",
     "download": "node webpack/script/download.js",
     "dev": "webpack --config=./webpack/config/webpack.dev.js",
     "dev:server": "webpack-dev-server --config=./webpack/config/webpack.devServer.js",
@@ -14,8 +16,7 @@
     "predev": "npm run beforeBuild",
     "predev:build": "npm run beforeBuild",
     "predev:server": "npm run beforeBuild",
-    "generateIconFont": "icon-font-generator src/icons/*.svg -o temp/webpack/fonts/icons",
-    "tempDirectory": "node webpack/script/tempDirectory.js"
+    "generateIconFont": "icon-font-generator src/icons/*.svg -o temp/webpack/fonts/icons"
   },
   "repository": {
     "type": "git",
