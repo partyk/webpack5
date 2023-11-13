@@ -4,6 +4,8 @@ const deleteDirectoryRecursive = require('./modules/deleteDirectoryRecursive');
 
 const listDirectoryPaths = [
     config.path.temp,
+    config.path.temp + '/fonts/icons',
+    config.path.temp + '/download',
 ];
 
 // smazu temp/webpack
