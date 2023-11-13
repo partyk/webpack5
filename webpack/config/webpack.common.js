@@ -54,7 +54,19 @@ module.exports = merge(
     loaders.vue(),
     loaders.javaScript(),
     loaders.styleCSS(),
-    loaders.styleLess(),
+    loaders.styleLess({
+        include: [
+            path.resolve(config.path.src, 'less'),
+        ],
+    }),
+    loaders.styleLess({
+        exclude: [
+            path.resolve(config.path.src, 'less'),
+        ],
+        finalLoader: {
+            type: 'style-loader',
+        },
+    }),
     loaders.styleScss(),
     loaders.imageMinimizer(),
     // loaders.imageMin(),
