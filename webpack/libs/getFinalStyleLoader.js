@@ -11,12 +11,6 @@ module.exports = ({
     switch (type) {
         case 'miniCssExtrac':
             return {
-                loader: 'style-loader',
-            };
-        case 'custom':
-            return loader;
-        default:
-            return {
                 loader: MiniCssExtractPlugin.loader,
                 options: {
                     publicPath: config.path.publicPathAssets,
@@ -26,6 +20,12 @@ module.exports = ({
                     // if hmr does not work, this is a forceful method.
                     // reloadAll: config.isProduction
                 },
+            };
+        case 'custom':
+            return loader;
+        default:
+            return {
+                loader: 'style-loader',
             };
     }
 };
