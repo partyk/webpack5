@@ -7,6 +7,8 @@ const loaders = require('./../loaders/index');
 // plugins
 const plugins = require('./../plugins/index');
 
+console.log(path.resolve(__dirname, 'node_modules'));
+
 module.exports = merge(
     {
         entry,
@@ -15,9 +17,9 @@ module.exports = merge(
         resolve: {
             extensions: ['.vue', '.js'/*, '.css', '.tsx', '.ts','.json' */],
             modules: [
-                path.resolve(__dirname, 'node_modules'),
-                path.resolve(__dirname, 'bower'),
-                path.resolve(__dirname, 'www/vendor'), // bower
+                path.resolve(config.path.root, 'node_modules'),
+                path.resolve(config.path.root, 'bower'),
+                path.resolve(config.path.root, 'www/vendor'), // bower
             ],
             alias: {
                 '@ui': path.resolve(__dirname, 'app/ui'),
