@@ -2,10 +2,11 @@
 <html>
 <head>
     <title>Getting Started</title>
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style-less.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style-scss.css">
-<!--    <link rel="stylesheet" type="text/css" href="/assets/css/style-scss.css">-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?ver=<%= htmlWebpackPlugin.options.ver %>">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style-less.css?ver=<%= htmlWebpackPlugin.options.ver %>">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style-scss.css?ver=<%= htmlWebpackPlugin.options.ver %>">
+    <!--    <link rel="stylesheet" type="text/css" href="/assets/css/style-scss.css">-->
+
 </head>
 <body>
 <div class="box1">box 1</div>
@@ -30,7 +31,8 @@
 <i class="icon-svg icon-svg-email"></i>
 <h3>VueJS</h3>
 <div id="app">{{ message }}</div>
-<script src="/assets/js/main.js" async defer></script>
+<script src="/assets/js/main.js?ver=<%= htmlWebpackPlugin.options.ver %>" async defer></script>
 <!--    <script src="/assets/js/style.js" async defer></script>-->
+
 </body>
 </html>
