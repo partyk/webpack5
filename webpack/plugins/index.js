@@ -1,4 +1,5 @@
 exports.clean = require('./webpack.clean');
+exports.concat = require('./webpack.concat');
 exports.copy = require('./webpack.copy');
 exports.cssnano = require('./webpack.cssnano');
 exports.define = require('./webpack.define');
