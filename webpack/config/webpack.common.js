@@ -51,6 +51,7 @@ module.exports = merge(
             }),
         ],
     },
+    loaders.modernizr(),
     loaders.vue(),
     loaders.javaScript(),
     loaders.styleCSS({
