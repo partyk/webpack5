@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "classic",
+    "strict": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "paths": {
+      "@src/*": [
+        "./src/*"
+      ],
+      "@js/*": [
+        "./src/js/*"
+      ],
+      "@scss/*": [
+        "./src/scss/*"
+      ],
+      "@images/*": [
+        "./src/images/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

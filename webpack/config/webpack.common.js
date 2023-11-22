@@ -13,7 +13,7 @@ module.exports = merge(
         mode: 'development',
         // a complete list of "stats" setting is on https://webpack.js.org/configuration/stats/
         resolve: {
-            extensions: ['.vue', '.js'/*, '.css', '.tsx', '.ts','.json' */],
+            extensions: ['.vue', '.js', '.tsx', '.ts'/*, '.css', '.tsx', '.ts','.json' */],
             modules: [
                 path.resolve(config.path.root, 'node_modules'),
             ],
@@ -39,6 +39,7 @@ module.exports = merge(
             plugins.ESLint({
                 extensions: [
                     '.js',
+                    '.ts',
                     '.vue',
                 ],
             }),
@@ -52,6 +53,7 @@ module.exports = merge(
         ],
     },
     loaders.vue(),
+    loaders.typeScript(),
     loaders.javaScript(),
     loaders.styleCSS({
         exclude: [
