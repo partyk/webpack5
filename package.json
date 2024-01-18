@@ -16,7 +16,7 @@
     "predev": "npm run beforeBuild",
     "predev:build": "npm run beforeBuild",
     "predev:server": "npm run beforeBuild",
-    "generateIconFont": "icon-font-generator src/icons/*.svg -o temp/webpack/fonts/icons"
+    "generateIconFont": "fantasticon src/icons -o temp/webpack/fonts/icons"
   },
   "repository": {
     "type": "git",
@@ -43,9 +43,9 @@
     "eslint-config-standart-partyk": "^2.0.0-beta.1",
     "eslint-plugin-vue": "^9.17.0",
     "eslint-webpack-plugin": "^4.0.1",
+    "fantasticon": "^2.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
-    "icon-font-generator": "^2.1.11",
     "image-minimizer-webpack-plugin": "^3.8.3",
     "imagemin": "^8.0.1",
     "imagemin-gifsicle": "^7.0.0",
