@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "cleanUp": "node webpack/script/cleanUp.js",
+    "babelJs": "node webpack/script/babelJs.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config=./webpack/config/webpack.dev.js",
     "build": "webpack --env production --config=./webpack/config/webpack.prod.js",
@@ -14,7 +15,8 @@
     "dev:server": "webpack-dev-server --config=./webpack/config/webpack.devServer.js",
     "prebuild": "npm run cleanUp",
     "predev": "npm run cleanUp",
-    "predev:server": "npm run cleanUp"
+    "predev:server": "npm run cleanUp",
+    "postbuild": "npm run babelJs"
   },
   "repository": {
     "type": "git",

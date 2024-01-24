@@ -12,7 +12,7 @@ const {merge} = require('webpack-merge');
 module.exports = (options = {}) => {
     options = merge({
         // cleanStaleWebpackAssets: false,
-        protectWebpackAssets: false
+        protectWebpackAssets: false,
     }, options);
     return new CleanWebpackPlugin(options);
 };
