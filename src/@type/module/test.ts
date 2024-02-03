@@ -3,4 +3,4 @@ const hello = (value: string): void => {
 };
 
 hello('aaa');
-hello(12);
+// hello(12);
