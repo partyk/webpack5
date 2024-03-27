@@ -1,3 +1,4 @@
+exports.bundleAnalyzer = require('./webpack.bundleAnalyzer');
 exports.clean = require('./webpack.clean');
 exports.copy = require('./webpack.copy');
 exports.cssnano = require('./webpack.cssnano');
