@@ -16,12 +16,18 @@ module.exports = ({
         rules: [
             {
                 // TODO dořešit SVG
-                test: /\.(jpe?g|png|gif)$/i,
+                test: /\.(jpe?g|png|gif|svg)$/i,
                 include,
                 exclude,
                 type: 'asset',
                 generator: {
                     filename: 'static/[name]-[contenthash][ext][query]',
+                },
+                parser: {
+                    // https://webpack.js.org/configuration/module/#ruleparserdataurlcondition
+                    dataUrlCondition: {
+                        maxSize: (1024 / 4), // base64 256b
+                    },
                 },
             },
         ],
@@ -45,6 +51,7 @@ module.exports = ({
                             ['gifsicle', {interlaced: true}],
                             ['jpegtran', {progressive: true}],
                             ['optipng', {optimizationLevel: 5}],
+                            ['pngquant', {quality: [0.6, 0.8]}],
                             // Svgo configuration here https://github.com/svg/svgo#configuration
                             [
                                 'svgo',

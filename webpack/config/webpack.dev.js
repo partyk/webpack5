@@ -1,6 +1,8 @@
 /* config for develop mode */
 const {merge} = require('webpack-merge');
 const common = require('./webpack.common');
+// plugins
+const plugins = require('./../plugins/index');
 
 module.exports = merge(common, {
     mode: 'development',
@@ -17,15 +19,31 @@ module.exports = merge(common, {
         moduleTrace: true,
         errorDetails: true
     }, */
+    /**
+     * @DOC https://webpack.js.org/configuration/cache/#cache
+     */
+    cache: {
+        type: 'memory',
+        cacheUnaffected: true,
+    },
+    // file cache
+    /* cache: {
+        allowCollectingMemory: true,
+        type: 'filesystem',
+        cacheDirectory: path.resolve(config.path.root, 'temp/webpack/cache'),
+        compression: 'gzip',
+    }, */
     devtool: 'source-map',
     watch: true,
     watchOptions: {
-        ignored: /node_modules/
+        ignored: /node_modules/,
     },
     plugins: [
         // plugins.friendlyErrors(),
         // plugins.bundleAnalyzer(),
-        // plugins.dashboard()
+        plugins.dashboard({
+            port: 3001,
+        }),
         // plugins.browserSync()
-    ]
+    ],
 });

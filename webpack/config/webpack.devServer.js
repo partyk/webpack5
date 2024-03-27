@@ -20,9 +20,23 @@ module.exports = merge(common, {
         moduleTrace: true,
         errorDetails: true
     }, */
+    /**
+     * @DOC https://webpack.js.org/configuration/cache/#cache
+     */
+    cache: {
+        type: 'memory',
+        cacheUnaffected: true,
+    },
+    // file cache
+    /* cache: {
+        allowCollectingMemory: true,
+        type: 'filesystem',
+        cacheDirectory: path.resolve(config.path.root, 'temp/webpack/cache'),
+        compression: 'gzip',
+    }, */
     devtool: 'source-map',
     watchOptions: {
-        ignored: /node_modules/
+        ignored: /node_modules/,
     },
     devServer: {
         static: {
@@ -31,5 +45,5 @@ module.exports = merge(common, {
     },
     // watch: true,
     plugins: [
-    ]
+    ],
 });

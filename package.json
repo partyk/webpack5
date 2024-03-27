@@ -9,9 +9,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config=./webpack/config/webpack.dev.js",
     "build": "webpack --env production --config=./webpack/config/webpack.prod.js",
+    "build:dashboard": "webpack-dashboard --port 3001 -- npm run build",
     "download": "node webpack/script/download.js",
     "dev": "webpack --config=./webpack/config/webpack.dev.js",
     "dev:server": "webpack-dev-server --config=./webpack/config/webpack.devServer.js",
+    "dev:dashboard": "webpack-dashboard --port 3001 -- npm run dev",
+    "dev:server:dashboard": "webpack-dashboard --port 3001 -- npm run dev:server",
     "prebuild": "npm run cleanUp",
     "predev": "npm run cleanUp",
     "predev:server": "npm run cleanUp"
@@ -69,6 +72,7 @@
     "vue-template-compiler": "^2.7.14",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
+    "webpack-dashboard": "^3.3.8",
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.9.0",
     "webpackbar": "^5.0.2"
