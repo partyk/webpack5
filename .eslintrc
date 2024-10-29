@@ -1,7 +1,7 @@
 {
   "extends": [
     "eslint-config-standart-partyk",
-    "plugin:vue/essential"
+    "plugin:vue/vue3-essential"
   ],
   "plugins": [
     "vue"
