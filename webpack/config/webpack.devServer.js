@@ -3,6 +3,8 @@ const config = require('./webpack.config');
 const {merge} = require('webpack-merge');
 // loader
 const common = require('./webpack.common');
+// plugins
+const plugins = require('./../plugins/index');
 
 
 module.exports = merge(common, {
@@ -22,7 +24,7 @@ module.exports = merge(common, {
     }, */
     devtool: 'source-map',
     watchOptions: {
-        ignored: /node_modules/
+        ignored: /node_modules/,
     },
     devServer: {
         static: {
@@ -31,5 +33,6 @@ module.exports = merge(common, {
     },
     // watch: true,
     plugins: [
-    ]
+        plugins.bundleAnalyzer(),
+    ],
 });

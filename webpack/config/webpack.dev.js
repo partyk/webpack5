@@ -1,6 +1,8 @@
 /* config for develop mode */
 const {merge} = require('webpack-merge');
 const common = require('./webpack.common');
+// plugins
+const plugins = require('./../plugins/index');
 
 module.exports = merge(common, {
     mode: 'development',
@@ -20,12 +22,12 @@ module.exports = merge(common, {
     devtool: 'source-map',
     watch: true,
     watchOptions: {
-        ignored: /node_modules/
+        ignored: /node_modules/,
     },
     plugins: [
         // plugins.friendlyErrors(),
-        // plugins.bundleAnalyzer(),
+        plugins.bundleAnalyzer(),
         // plugins.dashboard()
         // plugins.browserSync()
-    ]
+    ],
 });

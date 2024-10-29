@@ -1,17 +1,17 @@
 # webpack5
 Webpack 5 devstack
 
-Node.js: *v16.20.1*
+Node.js: *v18.18.2*
 
 ## Instalation from Git
 
 1.  Download or clone repository
-2.  run ```yarn install```
+2.  run ```npm install```
 
 ## How to run Webpack
 
-1. ```yarn start``` – run for developer mode
-2. ```yarn run build``` – run for production mode
+1. ```npm start``` – run for developer mode
+2. ```npm run build``` – run for production mode
 
 ## Configured files
 

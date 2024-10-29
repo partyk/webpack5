@@ -1,5 +1,6 @@
 node_modules/
 dist/assets/
+dist/index.html
 webpack/config/*.local.js
 temp
 yarn-error.log
