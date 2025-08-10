@@ -9,5 +9,6 @@ module.exports = {
     // css style
     'style': path.resolve(config.path.src, 'css/src/style.css'),
     'style-less': path.resolve(config.path.src, 'less/style.less'),
-    'style-scss': path.resolve(config.path.src, 'scss/src/style.scss')
+    'style-scss': path.resolve(config.path.src, 'scss/src/style.scss'),
+    'style-tailwind': path.resolve(config.path.src, 'tailwind/src/tailwind.scss'),
 };

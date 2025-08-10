@@ -1,7 +1,7 @@
 const config = require('./../config/webpack.config');
 
 /* plugins */
-const plugins = require('./../plugins/index');
+// const plugins = require('./../plugins/index');
 
 module.exports = () => ({
     loader: 'postcss-loader',
@@ -11,11 +11,12 @@ module.exports = () => ({
             plugins: [
                 // TODO nefunguje clean duplicitniho kodu
                 // plugins.discardDuplicates(),
-                plugins.pixrem(),
+                ['tailwindcss'],
+                // plugins.pixrem(),
                 'autoprefixer',
                 'postcss-preset-env',
-                ...(config.isProduction ? [plugins.cssnano()] : [])
-            ]
-        }
-    }
+                ...(config.isProduction ? [plugins.cssnano()] : []),
+            ],
+        },
+    },
 });
