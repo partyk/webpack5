@@ -37,6 +37,7 @@ module.exports = merge(
             // plugins.imageMin(),
             plugins.webpackBar(),
             plugins.ESLint({
+                configType: 'eslintrc',
                 extensions: [
                     '.js',
                     '.vue',

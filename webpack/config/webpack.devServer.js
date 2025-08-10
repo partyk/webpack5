@@ -33,6 +33,6 @@ module.exports = merge(common, {
     },
     // watch: true,
     plugins: [
-        plugins.bundleAnalyzer(),
+        // plugins.bundleAnalyzer(), // doresit pro webpack server
     ],
 });

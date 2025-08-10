@@ -1,3 +1,2 @@
-@import "../variables/index";
-@import "../core/index";
-@import "../components/index";
+@use "../core/index" as core;
+@use "../components/index" as components;
