@@ -38,7 +38,7 @@ module.exports = merge(
             plugins.webpackBar(),
             plugins.ESLint({
                 failOnError: process.env.NODE_ENV === 'production',
-                configType: 'eslintrc',
+                // configType: 'eslintrc',
                 extensions: [
                     '.js',
                     '.vue',
