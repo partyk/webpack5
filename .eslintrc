@@ -1,16 +1,12 @@
 {
   "extends": [
-    "eslint-config-standart-partyk",
-    "plugin:vue/vue3-essential"
+    "eslint-config-standart-partyk"
   ],
-  "plugins": [
-    "vue"
-  ],
-  "parser": "vue-eslint-parser",
+  "plugins": [],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
-    "requireConfigFile": false,
+    "requireConfigFile": true,
     "ecmaVersion": 12,
-    "parser": "@babel/eslint-parser",
     "babelOptions": {
       "presets": ["@babel/preset-env"]
     },
@@ -51,12 +47,30 @@
         "asyncArrow": "always"
       }
     ],
-    "no-unneeded-ternary": 2,
-    "vue/script-indent": ["warn", 4, {
-      "baseIndent": 0
-    }],
-    "vue/html-indent": ["warn", 4, {
-      "attribute": 2
-    }]
-  }
+    "no-unneeded-ternary": 2
+  },
+  "overrides": [
+    {
+      "files": ["*.vue"],
+      "extends": ["plugin:vue/essential"],
+      "plugins": ["vue"],
+      "parser": "vue-eslint-parser",
+      "parserOptions": {
+        "babelOptions": {
+          "presets": ["@babel/preset-env"]
+        }
+      },
+      "rules": {
+        "vue/no-reserved-component-names": 0,
+        "vue/multi-word-component-names": 0,
+        "vue/script-indent": ["warn", 4, {
+          "baseIndent": 0,
+          "switchCase": 1
+        }],
+        "vue/html-indent": ["warn", 4, {
+          "attribute": 2
+        }]
+      }
+    }
+  ]
 }

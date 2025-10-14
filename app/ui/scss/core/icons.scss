@@ -4,6 +4,8 @@
  -  This file contains all used custom icons.
  */
 
+@use "../variables/index" as *;
+
 
 @each $icon in $font-icons {
     .icon-#{$icon}::before {
