@@ -33,6 +33,9 @@ module.exports = merge(common, {
     },
     // watch: true,
     plugins: [
-        // plugins.bundleAnalyzer(), // doresit pro webpack server
+        // plugins.friendlyErrors(),
+        // plugins.bundleAnalyzer(),
+        // plugins.dashboard()
+        // plugins.browserSync()
     ],
 });

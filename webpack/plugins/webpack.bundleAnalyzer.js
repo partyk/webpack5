@@ -5,6 +5,5 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 
 module.exports = (options = {}) => {
-    console.log(process.argv.includes('--analyzer'));
     return new BundleAnalyzerPlugin(options);
 };

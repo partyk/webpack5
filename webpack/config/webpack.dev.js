@@ -26,7 +26,7 @@ module.exports = merge(common, {
     },
     plugins: [
         // plugins.friendlyErrors(),
-        plugins.bundleAnalyzer(),
+        // plugins.bundleAnalyzer(),
         // plugins.dashboard()
         // plugins.browserSync()
     ],
