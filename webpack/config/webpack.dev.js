@@ -5,8 +5,6 @@ const {fileCache} = require('./webpack.cache');
 // plugins
 const plugins = require('./../plugins/index');
 
-console.log(fileCache);
-
 module.exports = merge(common, {
     mode: 'development',
     stats: 'minimal',
