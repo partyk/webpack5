@@ -1,6 +1,7 @@
 const path = require('path');
 const config = require('./webpack.config');
 const {merge} = require('webpack-merge');
+const {fileCache} = require('./webpack.cache');
 // loader
 const common = require('./webpack.common');
 // plugins
@@ -22,6 +23,7 @@ module.exports = merge(common, {
         moduleTrace: true,
         errorDetails: true
     }, */
+    cache: fileCache,
     devtool: 'source-map',
     watchOptions: {
         ignored: /node_modules/,
