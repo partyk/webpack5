@@ -1,4 +1,6 @@
-// webpack.config.js
+/**
+ * @DOC https://www.npmjs.com/package/dotenv-webpack
+ */
 const Dotenv = require('dotenv-webpack');
 
 module.exports = (options = {}) => {
