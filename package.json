@@ -36,6 +36,7 @@
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
     "cssnano": "^7.1.0",
+    "dotenv-webpack": "^8.1.1",
     "download": "^8.0.0",
     "eslint": "^8.57.1",
     "eslint-config-standart-partyk": "^2.1.1",

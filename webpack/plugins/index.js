@@ -4,6 +4,7 @@ exports.copy = require('./webpack.copy');
 exports.cssnano = require('./webpack.cssnano');
 exports.define = require('./webpack.define');
 exports.discardDuplicates = require('./webpack.discardDuplicates');
+exports.dotenv = require('./webpack.dotenv');
 exports.ESLint = require('./webpack.ESLint');
 exports.htmlWebpack = require('./webpack.htmlWebpack');
 exports.miniCssExtract = require('./webpack.miniCssExtract');

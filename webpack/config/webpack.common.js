@@ -31,6 +31,9 @@ module.exports = merge(
             clean: true,
         },
         plugins: [
+            plugins.dotenv({
+                path: path.resolve(config.path.root, '.env'),
+            }),
             plugins.clean(),
             plugins.copy(),
             plugins.miniCssExtract(),
